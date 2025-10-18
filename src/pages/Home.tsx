@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import SearchIcon from "@mui/icons-material/Search";
@@ -176,6 +177,17 @@ const ScrollToTopButton = () => {
 const Home = () => {
   return (
     <div className="home-page" dir="rtl">
+      <Helmet>
+        <title>منصة تعليمية للبرمجة | Edu Platform - تعلم البرمجة بسهولة</title>
+        <meta name="description" content="ابدأ مسارك البرمجي بخطوات واضحة ومحتوى عربي مبسط. منصة تجمع أفضل الشروحات العربية من يوتيوب في مكان واحد." />
+        <meta name="keywords" content="تعلم البرمجة, كورسات برمجة, مسارات تعليمية, تطوير الويب, HTML, CSS, JavaScript, React, Python" />
+        <link rel="canonical" href="https://edu-platform.netlify.app/" />
+        <meta property="og:title" content="منصة تعليمية للبرمجة | Edu Platform" />
+        <meta property="og:description" content="ابدأ مسارك البرمجي بخطوات واضحة ومحتوى عربي مبسط. منصة تجمع أفضل الشروحات العربية من يوتيوب في مكان واحد." />
+        <meta property="og:image" content="https://edu-platform.netlify.app/preview.png" />
+        <meta property="og:url" content="https://edu-platform.netlify.app/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* ===== Hero Section ===== */}
       <section className="hero-section">
         <div className="hero-content">

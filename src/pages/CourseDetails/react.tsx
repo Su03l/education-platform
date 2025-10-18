@@ -41,6 +41,32 @@ export default function ReactCoursePage() {
 
   return (
     <div className="react-course-page" dir="rtl">
+      <Helmet>
+        <title>كورس React JS للمبتدئين | Edu Platform</title>
+        <meta name="description" content="تعلم React JS خطوة بخطوة لبناء تطبيقات ويب احترافية. مسار متكامل من الصفر للاحتراف." />
+        <meta name="keywords" content="React, تعلم React, كورسات برمجة, تطوير واجهات, JavaScript" />
+        <link rel="canonical" href="https://edu-platform.netlify.app/courses/react" />
+        <meta property="og:title" content="كورس React JS للمبتدئين | Edu Platform" />
+        <meta property="og:description" content="تعلم React JS خطوة بخطوة لبناء تطبيقات ويب احترافية. مسار متكامل من الصفر للاحتراف." />
+        <meta property="og:image" content="https://edu-platform.netlify.app/preview.png" />
+        <meta property="og:url" content="https://edu-platform.netlify.app/courses/react" />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org/",
+            "@type": "Course",
+            "name": "كورس React JS للمبتدئين",
+            "description": "تعلم React JS خطوة بخطوة لبناء تطبيقات ويب احترافية. مسار متكامل من الصفر للاحتراف.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Edu Platform",
+              "url": "https://edu-platform.netlify.app/"
+            }
+          }
+          `}
+        </script>
+      </Helmet>
       <header className="react-course-header">
         <div className="react-course-container">
           <Link to="/courses" className="back-link">

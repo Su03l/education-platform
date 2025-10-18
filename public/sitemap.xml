@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://edu-platform.netlify.app/</loc></url>
+  <url><loc>https://edu-platform.netlify.app/about</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses</loc></url>
+  <url><loc>https://edu-platform.netlify.app/contact</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways/frontend-web</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways/backend-web</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways/frontend-app</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways/programming-basics</loc></url>
+  <url><loc>https://edu-platform.netlify.app/pathways/ui-ux</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/html</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/css</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/javascript</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/typescript</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/react</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/python</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/java</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/sql</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/git</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/bootstrap</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/mongodb</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/nodejs</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/tailwind</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/php</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/laravel</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/flutter</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/cpp</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/ui-ux</loc></url>
+  <url><loc>https://edu-platform.netlify.app/courses/nestjs</loc></url>
+</urlset>

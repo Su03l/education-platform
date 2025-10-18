@@ -61,6 +61,7 @@ const CourseCard: React.FC<{ course: CourseCardProps }> = ({ course }) => {
           src={course.image || fallbackImage!}
           alt={course.title}
           className="course-image"
+          loading="lazy"
         />
       )}
       {!course.image && !fallbackImage && course.icon && (
