@@ -1,0 +1,273 @@
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+  border-top: 3px solid var(--primary-color);
+}
+
+.footer-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* === الأقسام العامة === */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+}
+
+/* === القسم الأول - البراند === */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.footer-logo svg {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.brand-description {
+  line-height: 1.6;
+  opacity: 0.9;
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* === القسم الثاني - الروابط === */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.footer-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+/* === القسم الثالث - التواصل === */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.contact-description {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-icon {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-info {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.twitter-handle {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.twitter-handle:hover {
+  text-decoration: underline;
+}
+
+/* === القسم الرابع - وسائل التواصل === */
+.social-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.social-description {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  background: var(--background-color);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+}
+
+.social-icon {
+  font-size: 1.3rem;
+}
+
+/* === الخط الفاصل === */
+.footer-line {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem auto;
+  max-width: var(--max-content-width);
+  width: calc(100% - 2.5rem);
+}
+
+/* === الحقوق === */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.copyright {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.copyright strong {
+  color: var(--primary-color);
+}
+
+/* === التجاوب === */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-section {
+    gap: 1.25rem;
+  }
+
+  .contact-method {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+}

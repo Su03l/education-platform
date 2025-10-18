@@ -1,0 +1,19 @@
+/* Light Theme */
+:root {
+  --primary-color: #f5332c;
+  --secondary-color: #f2f2f2;
+  --background-color: #ffffff;
+  --background-color-scrolled: rgba(255, 255, 255, 0.9);
+  --text-color: #1a1a1a;
+  --max-content-width: 1280px;
+  --navbar-height: 70px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #f5332c;
+  --secondary-color: #3a3a3a;
+  --background-color: #2a2a2a;
+  --background-color-scrolled: rgba(42, 42, 42, 0.85);
+  --text-color: #e6e1d9;
+}

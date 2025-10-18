@@ -1,0 +1,275 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; 
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease-in-out;
+  direction: rtl;
+  height: var(--navbar-height);
+  box-sizing: border-box;
+}
+
+.navbar.scrolled {
+  background-color: var(--background-color-scrolled);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--primary-color) 20%,
+    var(--primary-color) 80%,
+    transparent 100%
+  );
+}
+
+/* Logo / Book Icon */
+.logo-wrapper {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease-in-out;
+}
+
+.logo-wrapper:hover {
+  transform: rotateZ(10deg);
+}
+
+.MuiSvgIcon-root {
+  color: var(--text-color);
+}
+
+.logo-wrapper .MuiSvgIcon-root {
+  color: #fff; /* white icon color on primary-color background */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Added gap */
+}
+
+.logo-text {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Center Links */
+.navbar-center {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-center a,
+.navbar-center .MuiButton-root {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: inherit;
+  text-transform: none;
+  font-size: 1rem;
+  position: relative; /* For underline pseudo-element */
+  padding: 0.25rem 0.5rem;
+}
+
+/* Underline hover effect */
+.navbar-center a::after,
+.navbar-center .MuiButton-root::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px; /* Position underline outside the element's box */
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.25s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navbar-center a:hover::after,
+.navbar-center .MuiButton-root:hover::after {
+  width: 100%;
+}
+
+.navbar-center a:hover,
+.navbar-center .MuiButton-root:hover {
+  color: var(--primary-color);
+}
+
+.navbar-left .MuiButton-root {
+  color: var(--text-color);
+  border-radius: 8px;
+  transition: all 0.25s ease-in-out;
+}
+
+.navbar-left .MuiButton-root:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile menu styles */
+.mobile-menu-icon,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* Breakpoint for tablet and mobile */
+  .navbar-center,
+  .desktop-menu {
+    display: none; /* Hide desktop menu */
+  }
+
+  .mobile-menu-icon {
+    display: flex; /* Show hamburger icon */
+    align-items: center;
+  }
+
+  .mobile-menu-icon .MuiButton-root,
+  .mobile-menu-icon .icon-btn {
+    color: var(--text-color);
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    position: absolute;
+    top: var(--navbar-height); /* Position below navbar using variable */
+    left: 0;
+    width: 100vw; /* Ensure exact viewport width to avoid horizontal scroll */
+    background-color: var(--background-color);
+    padding: 0.75rem 0.5rem;
+    border-top: 1px solid var(--secondary-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+  }
+
+  .mobile-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .mobile-menu .MuiButton-root {
+    color: var(--text-color);
+  }
+}
+
+/* small screens: ensure navbar elements wrap nicely */
+@media (max-width: 420px) {
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-wrapper {
+    padding: 0.2rem;
+  }
+
+  .navbar {
+    padding: 0 0.5rem;
+  }
+}
+.theme-btn {
+  border-radius: 5px;
+  padding: 3px 5px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.theme-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Icon button used for mobile menu */
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Adjust border color for dark theme */
+[data-theme="dark"] .theme-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .navbar-left .MuiButton-root {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .mobile-menu {
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 54px;
+    min-height: 50px;
+    padding: 0 0.2rem;
+  }
+  .logo-text {
+    font-size: 0.97rem;
+    padding: 0 0.2rem;
+    white-space: nowrap;
+  }
+  .logo-wrapper {
+    padding: 0.13rem;
+    min-width: 34px;
+    height: 34px;
+    border-radius: 7px;
+  }
+  .mobile-menu {
+    left: 0;
+    width: 100vw !important;
+    min-width: 0;
+    padding: 0.3rem 0.2rem;
+    gap: 0.2rem;
+    top: 54px; /* nav height */
+  }
+  .mobile-menu a, .mobile-menu .theme-btn {
+    font-size: 1.1rem;
+    padding: 0.9rem 0.2rem;
+    border-radius: 8px;
+    min-height: 46px;
+  }
+  .mobile-menu-icon button {
+    min-width: 38px;
+    min-height: 38px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Push content below navbar on mobile */
+@media (max-width: 480px) {
+  .has-mobile-navbar {
+    margin-top: 54px !important; /* see JS to add this, or use .app-container */
+  }
+}
+

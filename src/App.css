@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-color: #2a2a2a; */
+}
+
+.content {
+  max-width: var(--max-content-width, 1280px);
+  margin: 0 auto;
+  padding: calc(var(--navbar-height, 70px) + 12px) 1.25rem 0; /* dynamic top padding */
+  flex: 1; /* Ensures content area grows to push footer down */
+}

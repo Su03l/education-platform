@@ -1,0 +1,307 @@
+/* ---------- Pathways Section ---------- */
+.pathways-section {
+  padding: 4rem 1.25rem;
+  text-align: center;
+  max-width: var(--max-content-width, 1280px);
+  margin: 0 auto;
+  background-color: var(--background-color);
+  box-sizing: border-box;
+}
+
+.pathways-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.pathways-header p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* ---------- Pathways Grid ---------- */
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.pathway-card {
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: right;
+  border: 1px solid var(--secondary-color);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pathway-card:hover {
+  transform: translateY(-5px);
+}
+
+.pathway-icon {
+  font-size: 2.5rem !important;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-self: flex-end;
+  transition: all 0.3s ease-in-out;
+}
+
+.pathway-card:hover .pathway-icon {
+  transform: rotateZ(180deg);
+}
+
+.pathway-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.pathway-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.pathway-description {
+  color: var(--text-color);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.pathway-courses-preview h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.courses-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-tag {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.course-tag:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.course-tag-more {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.course-tag-more:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.view-pathway-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: auto;
+  color: #fff;
+  cursor: pointer;
+}
+
+.view-pathway-btn:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 90%, black 10%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Dark Theme Styles ---------- */
+[data-theme="dark"] .pathway-card {
+  border-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .course-tag {
+  border-color: var(--primary-color);
+  opacity: 0.9;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1200px) {
+  .pathways-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pathways-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pathways-section {
+    padding: 3rem 1rem;
+  }
+
+  .pathways-header h2 {
+    font-size: 2rem;
+  }
+
+  .pathways-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pathway-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pathways-section {
+    padding: 2rem 1rem;
+  }
+
+  .pathways-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .pathway-card {
+    padding: 1rem;
+  }
+
+  .pathway-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem !important;
+  }
+
+  .pathway-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .pathway-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .view-pathway-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .pathways-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .pathway-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem !important;
+  }
+
+  .pathway-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------- Touch Device Optimizations ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .pathway-card:hover {
+    transform: none;
+  }
+
+  .pathway-card:hover .pathway-icon {
+    transform: none;
+  }
+
+  .view-pathway-btn:hover {
+    transform: none;
+  }
+
+  .course-tag:hover {
+    background-color: transparent;
+    color: var(--text-color);
+  }
+}
+
+/* Scroll To Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive for phone devices */
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-to-top .MuiSvgIcon-root {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,303 @@
+/* ---------- Page Layout ---------- */
+.about-page {
+  text-align: center;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+  max-width: var(--max-content-width, 1280px);
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+/* ---------- Header Section ---------- */
+.about-header-bg {
+  padding: 3rem 1.25rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  text-align: center;
+  background-color: var(--secondary-color);
+}
+
+/* ---------- Title & Description Background ---------- */
+.about-main-title,
+.about-main-desc {
+  display: inline-block; /* Wrap background only around text */
+  /* background-color: color-mix(
+    in srgb,
+    var(--primary-color) 15%,
+    var(--secondary-color) 85%
+  ); */
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.about-main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-main-desc {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+}
+
+/* Animation for header text */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Vision & Mission Section ---------- */
+.about-row.about-vision-mission {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.vision-big-card,
+.mission-big-card {
+  flex: 1 1 300px;
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.vision-big-card:hover,
+.mission-big-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vision-big-card .card-icon,
+.mission-big-card .card-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+  border: 2px solid var(--primary-color);
+  padding: 12px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.vision-big-card:hover .card-icon,
+.mission-big-card:hover .card-icon {
+  transform: rotateZ(180deg);
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.vision-big-card h2,
+.mission-big-card h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+.vision-big-card p,
+.mission-big-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ---------- Values Cards Section ---------- */
+.about-values-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.about-values-desc {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 0 auto 3rem auto;
+}
+
+.value-grid-card {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.value-grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-grid-card .card-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+  border: 2px solid var(--primary-color);
+  padding: 12px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.value-grid-card:hover .card-icon {
+  transform: rotateZ(180deg);
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.value-grid-card h3 {
+  font-size: 1.3rem;
+  margin: 0.8rem 0 0.4rem 0;
+  color: var(--text-color);
+}
+
+.value-grid-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* ---------- Dark Theme ---------- */
+[data-theme="dark"] .vision-big-card,
+[data-theme="dark"] .mission-big-card,
+[data-theme="dark"] .value-grid-card,
+[data-theme="dark"] .about-header-bg {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1024px) {
+  .about-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-row.about-vision-mission {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main-title {
+    font-size: 1.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .about-main-desc {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+/* قسم الملاحظة المهمة */
+.about-notice-section {
+  margin: 3rem auto;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.notice-card {
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.notice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.notice-card .card-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+  border: 2px solid var(--primary-color);
+  padding: 12px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.notice-card:hover .card-icon {
+  transform: rotateZ(180deg);
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.notice-card h3 {
+  font-size: 1.3rem;
+  margin: 0.8rem 0 0.4rem 0;
+  color: var(--text-color);
+}
+
+.notice-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.notice-card strong {
+  color: var(--primary-color);
+}
+
+/* Dark Theme */
+[data-theme="dark"] .notice-card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-notice-section {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notice-card {
+    padding: 1.25rem;
+  }
+
+  .notice-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .notice-card p {
+    font-size: 0.9rem;
+  }
+}

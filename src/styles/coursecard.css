@@ -1,0 +1,136 @@
+.course-card {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  text-align: right; /* For RTL */
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.div2,
+.div3 {
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.div1 {
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.course-image {
+  max-width: 60%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+.course-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Larger image for the main featured card */
+.div1 .course-image {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Medium size for the side cards */
+.div2 .course-image {
+  height: auto;
+}
+
+.course-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  flex-grow: 1; /* Pushes meta and link to the bottom */
+  margin-bottom: 1rem;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.meta-item .MuiSvgIcon-root {
+  font-size: 1.1rem;
+}
+
+.level {
+  background-color: rgba(223, 1, 57, 0.1);
+  color: var(--primary-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.course-link {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 3px solid transparent; /* Add transparent border for smooth transition */
+  transition: all 0.3s ease;
+}
+
+.course-link:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .course-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .course-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .course-card p {
+    font-size: 0.9rem;
+  }
+}
+
+[data-theme="dark"] .course-card {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .course-card:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
