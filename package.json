@@ -1,5 +1,6 @@
 {
   "name": "education-platform",
+  "homepage": "https://edu-platfarom.netlify.app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
