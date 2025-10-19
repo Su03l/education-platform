@@ -55,6 +55,7 @@ export default function FrontendWebPathway() {
       "react",
       "tailwind",
       "bootstrap",
+      "nextjs",
     ].some((tech) => course.link.includes(tech))
   );
 
@@ -187,6 +188,13 @@ export default function FrontendWebPathway() {
               <h4>Bootstrap</h4>
               <p>
                 مكتبة CSS لبناء واجهات مستخدم تفاعلية وقابلة لإعادة الاستخدام.
+              </p>
+            </div>
+            <div className="tech-card">
+              <h4>Next Js</h4>
+              <p>
+                مكتبة JavaScript لبناء واجهات مستخدم تفاعلية وقابلة لإعادة
+                الاستخدام.
               </p>
             </div>
           </div>

@@ -18,6 +18,7 @@ import flutterImage from "../assets/images/flutter-svgrepo-com.svg";
 import cppImage from "../assets/images/c.svg";
 import uiuxImage from "../assets/images/UI-UX.svg";
 import nestImage from "../assets//images/nest-middleware-js-svgrepo-com.svg";
+import nextJsImage from "../assets/images/next-js-svgrepo-com.svg";
 export type Course = {
   icon?: ReactNode;
   image?: string;
@@ -31,8 +32,6 @@ export type Course = {
   linkText: string;
   className?: string;
 };
-
-
 
 export const coursesData: Course[] = [
   {
@@ -87,59 +86,69 @@ export const coursesData: Course[] = [
     link: "/courses/react",
     linkText: "ابدأ الكورس",
   },
-
-{
-  image: tailwindImage,
-  title: "تصميم واجهات احترافية باستخدام Tailwind CSS",
-  description:
-    "تعلم كيف تنشئ تصاميم عصرية ومتجاوبة بسهولة وسرعة باستخدام إطار العمل Tailwind CSS القوي والمخصص للمطورين المبدعين.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.7,
-  link: "/courses/tailwind",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: bootstrapImage,
-  title: "إتقان تصميم الواجهات مع Bootstrap",
-  description:
-    "اكتشف كيف تبني مواقع جميلة ومتجاوبة بسرعة باستخدام Bootstrap، أشهر إطار لتصميم واجهات الويب الجاهزة.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.6,
-  link: "/courses/bootstrap",
-  linkText: "ابدأ الكورس",
-},
   {
-  image: nodeImage,
-  title: "تطوير الباك إند باستخدام Node.js",
-  description:
-    "ابدأ رحلتك في بناء الخوادم باستخدام Node.js وتعلم كيفية إنشاء واجهات برمجية (APIs) قوية وربطها مع قواعد البيانات.",
-  level: "متوسط إلى متقدم",
-  rating: 4.8,
-  link: "/courses/nodejs",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: nestImage,
-  title: "تطوير التطبيقات باستخدام NestJS",
-  description:
-    "تعلم بناء واجهات خلفية قوية ومنظمة باستخدام إطار العمل NestJS المبني على TypeScript لتطوير تطبيقات احترافية.",
-  level: "متوسط إلى متقدم",
-  rating: 4.7,
-  link: "/courses/nestjs",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: mongoImage,
-  title: "إدارة قواعد البيانات باستخدام MongoDB",
-  description:
-    "تعلم كيفية إنشاء وإدارة قواعد بيانات NoSQL باستخدام MongoDB وربطها مع تطبيقاتك لبناء مشاريع متكاملة.",
-  level: "متوسط إلى متقدم",
-  rating: 4.8,
-  link: "/courses/mongodb",
-  linkText: "ابدأ الكورس",
-},
+    image: nextJsImage,
+    title: "تطوير تطبيقات الويب بـ Next.js",
+    description:
+      "تعلم بناء تطبيقات ويب متقدمة وسريعة مع SSR وSSG باستخدام إطار Next.js مع أفضل الممارسات الحديثة.",
+    level: "متوسط إلى متقدم",
+    rating: 4.7,
+    link: "/courses/nextjs",
+    linkText: "ابدأ الكورس",
+  },
 
- {
+  {
+    image: tailwindImage,
+    title: "تصميم واجهات احترافية باستخدام Tailwind CSS",
+    description:
+      "تعلم كيف تنشئ تصاميم عصرية ومتجاوبة بسهولة وسرعة باستخدام إطار العمل Tailwind CSS القوي والمخصص للمطورين المبدعين.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.7,
+    link: "/courses/tailwind",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: bootstrapImage,
+    title: "إتقان تصميم الواجهات مع Bootstrap",
+    description:
+      "اكتشف كيف تبني مواقع جميلة ومتجاوبة بسرعة باستخدام Bootstrap، أشهر إطار لتصميم واجهات الويب الجاهزة.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.6,
+    link: "/courses/bootstrap",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: nodeImage,
+    title: "تطوير الباك إند باستخدام Node.js",
+    description:
+      "ابدأ رحلتك في بناء الخوادم باستخدام Node.js وتعلم كيفية إنشاء واجهات برمجية (APIs) قوية وربطها مع قواعد البيانات.",
+    level: "متوسط إلى متقدم",
+    rating: 4.8,
+    link: "/courses/nodejs",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: nestImage,
+    title: "تطوير التطبيقات باستخدام NestJS",
+    description:
+      "تعلم بناء واجهات خلفية قوية ومنظمة باستخدام إطار العمل NestJS المبني على TypeScript لتطوير تطبيقات احترافية.",
+    level: "متوسط إلى متقدم",
+    rating: 4.7,
+    link: "/courses/nestjs",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: mongoImage,
+    title: "إدارة قواعد البيانات باستخدام MongoDB",
+    description:
+      "تعلم كيفية إنشاء وإدارة قواعد بيانات NoSQL باستخدام MongoDB وربطها مع تطبيقاتك لبناء مشاريع متكاملة.",
+    level: "متوسط إلى متقدم",
+    rating: 4.8,
+    link: "/courses/mongodb",
+    linkText: "ابدأ الكورس",
+  },
+
+  {
     image: sqlImage,
     title: "تصميم قواعد البيانات PostgreSQL",
     description:
@@ -150,25 +159,25 @@ export const coursesData: Course[] = [
     linkText: "ابدأ الكورس",
   },
   {
-  image: phpImage,
-  title: "برمجة PHP",
-  description:
-    "تعلم أساسيات لغة PHP لبناء تطبيقات ويب ديناميكية: متغيرات، تحكم بالتيار، التعامل مع النماذج، الجلسات، وربط قواعد البيانات.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.7,
-  link: "/courses/php",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: laravelImage,
-  title: "تطوير الويب باستخدام Laravel",
-  description:
-    "تعلّم بناء تطبيقات ويب احترافية باستخدام إطار العمل Laravel: تنظيم المشروع، Eloquent ORM، المصادقة، وإنشاء APIs متكاملة.",
-  level: "متوسط إلى متقدم",
-  rating: 4.8,
-  link: "/courses/laravel",
-  linkText: "ابدأ الكورس",
-},
+    image: phpImage,
+    title: "برمجة PHP",
+    description:
+      "تعلم أساسيات لغة PHP لبناء تطبيقات ويب ديناميكية: متغيرات، تحكم بالتيار، التعامل مع النماذج، الجلسات، وربط قواعد البيانات.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.7,
+    link: "/courses/php",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: laravelImage,
+    title: "تطوير الويب باستخدام Laravel",
+    description:
+      "تعلّم بناء تطبيقات ويب احترافية باستخدام إطار العمل Laravel: تنظيم المشروع، Eloquent ORM، المصادقة، وإنشاء APIs متكاملة.",
+    level: "متوسط إلى متقدم",
+    rating: 4.8,
+    link: "/courses/laravel",
+    linkText: "ابدأ الكورس",
+  },
 
   {
     image: pythonImage,
@@ -191,37 +200,36 @@ export const coursesData: Course[] = [
     linkText: "ابدأ الكورس",
   },
   {
-  image: flutterImage,
-  title: "أساسيات Flutter",
-  description:
-    "تعلم بناء تطبيقات الموبايل لأنظمة Android و iOS باستخدام إطار العمل Flutter مع تطبيقات عملية.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.7,
-  link: "/courses/flutter",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: cppImage,
-  title: "أساسيات ++C",
-  description:
-    "اكتشف قوة لغة ++C في تطوير الأنظمة والبرامج عالية الأداء مع تطبيقات وأمثلة عملية.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.5,
-  link: "/courses/cpp",
-  linkText: "ابدأ الكورس",
-},
-{
-  image: uiuxImage,
-  title: "تصميم واجهات وتجربة المستخدم (UI & UX)",
-  description:
-    "تعلم كيفية تصميم واجهات احترافية وتجارب مستخدم مميزة باستخدام أدوات حديثة ومبادئ التصميم الفعّالة.",
-  level: "مبتدئ إلى متوسط",
-  rating: 4.8,
-  link: "/courses/ui-ux",
-  linkText: "ابدأ الكورس",
-},
+    image: flutterImage,
+    title: "أساسيات Flutter",
+    description:
+      "تعلم بناء تطبيقات الموبايل لأنظمة Android و iOS باستخدام إطار العمل Flutter مع تطبيقات عملية.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.7,
+    link: "/courses/flutter",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: cppImage,
+    title: "أساسيات ++C",
+    description:
+      "اكتشف قوة لغة ++C في تطوير الأنظمة والبرامج عالية الأداء مع تطبيقات وأمثلة عملية.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.5,
+    link: "/courses/cpp",
+    linkText: "ابدأ الكورس",
+  },
+  {
+    image: uiuxImage,
+    title: "تصميم واجهات وتجربة المستخدم (UI & UX)",
+    description:
+      "تعلم كيفية تصميم واجهات احترافية وتجارب مستخدم مميزة باستخدام أدوات حديثة ومبادئ التصميم الفعّالة.",
+    level: "مبتدئ إلى متوسط",
+    rating: 4.8,
+    link: "/courses/ui-ux",
+    linkText: "ابدأ الكورس",
+  },
 
- 
   {
     image: gitImage,
     title: "إدارة الإصدارات باستخدام Git و GitHub",
@@ -232,9 +240,6 @@ export const coursesData: Course[] = [
     link: "/courses/git",
     linkText: "ابدأ الكورس",
   },
-  
-
-  
 ];
 
 export default coursesData;

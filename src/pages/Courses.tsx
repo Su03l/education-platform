@@ -49,6 +49,7 @@ export default function CoursesPage() {
           "react",
           "tailwind",
           "bootstrap",
+          "nextjs",
         ].some((tech) => c.link.includes(tech))
       ).length,
     },
@@ -106,6 +107,7 @@ export default function CoursesPage() {
               "react",
               "tailwind",
               "bootstrap",
+              "nextjs",
             ].some((tech) => course.link.includes(tech));
           case "frontend-app":
             return course.link.includes("flutter");

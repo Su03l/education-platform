@@ -32,6 +32,7 @@ import BackendWebPathway from "./pages/pathways/BackendWebPathway";
 import FrontendAppPathway from "./pages/pathways/FrontendAppPathway";
 import ProgrammingBasicsPathway from "./pages/pathways/ProgrammingBasicsPathway";
 import UIUXPathway from "./pages/pathways/UIUXPathway";
+import NextJs from "./pages/CourseDetails/nextjs";
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
           <Route path="/courses/cpp" element={<CppCourse />} />
           <Route path="/courses/ui-ux" element={<UiUxCourse />} />
           <Route path="/courses/nestjs" element={<NestJs />} />
+          <Route path="/courses/nextjs" element={<NextJs />} />
         </Routes>
       </main>
 
