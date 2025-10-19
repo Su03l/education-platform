@@ -6,6 +6,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
 import "../../styles/react.css";
+import { Helmet } from "react-helmet";
 
 const lessons = [
   { id: 1, title: "ماذا تحتاج للبدء", icon: "" },
