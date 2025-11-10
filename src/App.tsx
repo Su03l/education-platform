@@ -33,6 +33,7 @@ import FrontendAppPathway from "./pages/pathways/FrontendAppPathway";
 import ProgrammingBasicsPathway from "./pages/pathways/ProgrammingBasicsPathway";
 import UIUXPathway from "./pages/pathways/UIUXPathway";
 import NextJs from "./pages/CourseDetails/nextjs";
+import BlogPage from "./pages/blog";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
 
           {/* مسارات التعلم */}
           <Route path="/pathways" element={<PathwaysSection />} />

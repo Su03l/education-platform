@@ -14,9 +14,12 @@ import {
   RocketLaunch,
   Star,
   ArrowBack,
+  CheckCircle,
+  RadioButtonUnchecked,
 } from "@mui/icons-material";
 import "../../styles/pathway-details.css";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 export default function FrontendWebPathway() {
   const navigate = useNavigate();
   const ScrollToTopButton = () => {
@@ -57,6 +60,20 @@ export default function FrontendWebPathway() {
       "bootstrap",
       "nextjs",
     ].some((tech) => course.link.includes(tech))
+  );
+
+  // تعريف الكورسات الإجبارية والاختيارية
+  const mandatoryCourses = pathwayCourses.filter((course) =>
+    ["html", "css", "javascript", "react"].some((tech) =>
+      course.link.includes(tech)
+    )
+  );
+
+  const optionalCourses = pathwayCourses.filter(
+    (course) =>
+      !["html", "css", "javascript", "react"].some((tech) =>
+        course.link.includes(tech)
+      )
   );
 
   const handleStartCourse = (courseLink: string) => {
@@ -200,53 +217,124 @@ export default function FrontendWebPathway() {
           </div>
         </section>
 
+        {/* قسم جديد: الكورسات المتسلسلة */}
         <section className="pathway-section">
           <h2 className="section-title">
             <LibraryBooks className="section-title-icon" />
             الكورسات المتسلسلة
           </h2>
-          <div className="courses-timeline">
-            {pathwayCourses.map((course, index) => (
-              <div key={course.link} className="course-card">
-                <div className="course-step">الخطوة {index + 1}</div>
-                <div className="course-content">
-                  <div className="course-header">
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="course-image"
-                    />
-                    <div className="course-info">
-                      <h3>{course.title}</h3>
-                      <p>{course.description}</p>
-                      <div className="course-meta">
-                        <span className="course-level">
-                          <TrendingUp className="meta-icon" />
-                          {course.level}
-                        </span>
-                        {course.rating && (
-                          <span className="course-rating">
-                            <Star /> {course.rating}
-                          </span>
-                        )}
-                        {course.duration && (
-                          <span className="course-duration">
-                            <Schedule className="meta-icon" />
-                            {course.duration}
-                          </span>
-                        )}
+          <p className="section-description">
+            اتبع هذه الكورسات بالترتيب الموصى به لتحقيق أقصى استفادة من المسار.
+            الكورسات الإجبارية ضرورية لإتقان الأساسيات، بينما الكورسات
+            الاختيارية تمكنك من التخصص في مجالات محددة.
+          </p>
+
+          <div className="courses-sequence">
+            <div className="sequence-category">
+              <h3 className="category-title">
+                <CheckCircle className="category-icon mandatory" />
+                الكورسات الإجبارية
+              </h3>
+              <p className="category-description">
+                هذه الكورسات أساسية ولا غنى عنها لأي مطور واجهات أمامية
+              </p>
+              <div className="courses-timeline">
+                {mandatoryCourses.map((course, index) => (
+                  <div key={course.link} className="course-card mandatory">
+                    <div className="course-step">الخطوة {index + 1}</div>
+                    <div className="course-content">
+                      <div className="course-header">
+                        <img
+                          src={course.image}
+                          alt={course.title}
+                          className="course-image"
+                        />
+                        <div className="course-info">
+                          <h3>{course.title}</h3>
+                          <p>{course.description}</p>
+                          <div className="course-meta">
+                            <span className="course-level">
+                              <TrendingUp className="meta-icon" />
+                              {course.level}
+                            </span>
+                            {course.rating && (
+                              <span className="course-rating">
+                                <Star /> {course.rating}
+                              </span>
+                            )}
+                            {course.duration && (
+                              <span className="course-duration">
+                                <Schedule className="meta-icon" />
+                                {course.duration}
+                              </span>
+                            )}
+                          </div>
+                        </div>
                       </div>
+                      <button
+                        className="primary-button"
+                        onClick={() => handleStartCourse(course.link)}
+                      >
+                        ابدأ الكورس الآن
+                      </button>
                     </div>
                   </div>
-                  <button
-                    className="primary-button"
-                    onClick={() => handleStartCourse(course.link)}
-                  >
-                    ابدأ الكورس الآن
-                  </button>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="sequence-category">
+              <h3 className="category-title">
+                <RadioButtonUnchecked className="category-icon optional" />
+                الكورسات الاختيارية
+              </h3>
+              <p className="category-description">
+                اختر منها ما يناسب اهتماماتك ومتطلبات مشاريعك
+              </p>
+              <div className="courses-timeline">
+                {optionalCourses.map((course, index) => (
+                  <div key={course.link} className="course-card optional">
+                    <div className="course-step">اختياري {index + 1}</div>
+                    <div className="course-content">
+                      <div className="course-header">
+                        <img
+                          src={course.image}
+                          alt={course.title}
+                          className="course-image"
+                        />
+                        <div className="course-info">
+                          <h3>{course.title}</h3>
+                          <p>{course.description}</p>
+                          <div className="course-meta">
+                            <span className="course-level">
+                              <TrendingUp className="meta-icon" />
+                              {course.level}
+                            </span>
+                            {course.rating && (
+                              <span className="course-rating">
+                                <Star /> {course.rating}
+                              </span>
+                            )}
+                            {course.duration && (
+                              <span className="course-duration">
+                                <Schedule className="meta-icon" />
+                                {course.duration}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        className="primary-button"
+                        onClick={() => handleStartCourse(course.link)}
+                      >
+                        ابدأ الكورس الآن
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

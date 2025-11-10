@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
         <Link to="/about">حول المنصة</Link>
         <Link to="/courses">الكورسات</Link>
         <Link to="/pathways">المسارات</Link>
+        <Link to="/blog">المدونة</Link>
         <Link to="/contact">تواصل معنا</Link>
       </div>
 

@@ -216,7 +216,11 @@ export default function BackendWebPathway() {
             </div>
           </div>
         </section>
-
+        <h1 style={{ textAlign: "center" }}>اختر واحدة منها لبدء الكورس</h1>
+        <p style={{ textAlign: "center", marginBottom: "30px" }}>
+          كل كورس مختلف عن الاخر ويغطي جانب معين من تطوير الBackend وكل واحد
+          منها تكفي عن الاخر{" "}
+        </p>
         <section className="pathway-section">
           <h2 className="section-title">
             <LibraryBooks className="section-title-icon" />
