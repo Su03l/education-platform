@@ -8,7 +8,6 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-// Types for our footer data
 type QuickLink = {
   label: string;
   path: string;
@@ -20,7 +19,6 @@ type SocialLink = {
   icon: SvgIconComponent;
 };
 
-// Data objects now live inside the component file
 const quickLinks: QuickLink[] = [
   { label: "الرئيسية", path: "/" },
   { label: "من نحن", path: "/about" },
