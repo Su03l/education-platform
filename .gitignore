@@ -12,12 +12,7 @@ dist
 dist-ssr
 *.local
 build
-.cache
-.next
-.out
-.temp
-.tmp
-coverage
+
 .env
 .env.local
 .env.*.local

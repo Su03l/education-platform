@@ -7,6 +7,11 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
 import { supabase } from "../lib/supabase";
+import type { Database } from "../types/supabase";
+
+type PostRow = Database["public"]["Tables"]["posts"]["Row"];
+type PostInsert = Database["public"]["Tables"]["posts"]["Insert"];
+// type PostUpdate = Database["public"]["Tables"]["posts"]["Update"];
 
 // --- TYPES ---
 type Tab = "info" | "notes" | "courses" | "paths";
@@ -457,6 +462,7 @@ const CoursesModal: React.FC<{
     post: Omit<Post, "id" | "time" | "likes" | "isLiked" | "timestamp">
   ) => void;
 }> = ({ isOpen, onClose, onAddPost }) => {
+  const [author, setAuthor] = useState("");
   const [twitter, setTwitter] = useState("");
   const [pathway, setPathway] = useState<Pathway>("frontend-web");
   const [title, setTitle] = useState("");
@@ -489,7 +495,7 @@ const CoursesModal: React.FC<{
     const filteredLinks = links.filter((link) => link.trim() !== "");
 
     onAddPost({
-      author: twitterUsername,
+      author: author || twitterUsername,
       twitter: twitterUsername,
       title,
       content,
@@ -497,6 +503,7 @@ const CoursesModal: React.FC<{
       pathway,
       links: filteredLinks,
     });
+    setAuthor("");
     setTwitter("");
     setPathway("frontend-web");
     setTitle("");
@@ -515,6 +522,16 @@ const CoursesModal: React.FC<{
           </button>
         </div>
         <form onSubmit={handleSubmit} className="blog-form">
+          <div className="blog-form-group">
+            <label htmlFor="author">الاسم (اختياري)</label>
+            <input
+              id="author"
+              type="text"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+              placeholder="اسمك الكامل"
+            />
+          </div>
           <div className="blog-form-group">
             <label htmlFor="twitter">اسم المستخدم في تويتر *</label>
             <input
@@ -630,10 +647,8 @@ const PathsModal: React.FC<{
     onAddPost({
       author: name,
       twitter: twitterUsername,
-      title: `تجربتي مع ${pathwayName}`,
-      content:
-        details ||
-        `شارك تجربتي في ${pathwayName} وأريد مشاركة خبرتي مع المجتمع.`,
+      title: `اقتراح مسار: ${pathwayName}`,
+      content: details || `أقترح إضافة مسار ${pathwayName} إلى منصة المجتمع.`,
       tab: "paths",
     });
     setName("");
@@ -737,18 +752,18 @@ export default function Blog() {
       }
 
       if (data) {
-        const formattedPosts: Post[] = data.map((post) => ({
+        const formattedPosts: Post[] = data.map((post: PostRow) => ({
           id: post.id,
           author: post.author,
           title: post.title,
           content: post.content,
           time: getTimeAgo(new Date(post.created_at)),
-          twitter: post.twitter,
+          twitter: post.twitter || "",
           tab: post.tab,
           likes: post.likes || 0,
           isLiked: false,
           timestamp: new Date(post.created_at),
-          pathway: post.pathway,
+          pathway: post.pathway || undefined,
           links: post.links || [],
         }));
 
@@ -771,20 +786,22 @@ export default function Blog() {
     newPost: Omit<Post, "id" | "time" | "likes" | "isLiked" | "timestamp">
   ) => {
     try {
+      // إنشاء كائن PostInsert مع الحقول المطلوبة فقط
+      const newPostData: PostInsert = {
+        author: newPost.author,
+        title: newPost.title,
+        content: newPost.content,
+        twitter: newPost.twitter || null,
+        tab: newPost.tab,
+        pathway: newPost.pathway || null,
+        links: newPost.links || null,
+        likes: 0,
+      };
+
+      // استخدام type assertion لتجنب أخطاء TypeScript
       const { data, error } = await supabase
         .from("posts")
-        .insert([
-          {
-            author: newPost.author,
-            title: newPost.title,
-            content: newPost.content,
-            twitter: newPost.twitter,
-            tab: newPost.tab,
-            pathway: newPost.pathway,
-            links: newPost.links,
-            likes: 0,
-          },
-        ])
+        .insert([newPostData] as never)
         .select();
 
       if (error) {
@@ -792,25 +809,26 @@ export default function Blog() {
         return;
       }
 
-      if (data) {
-        const addedPost = data[0];
+      if (data && data.length > 0) {
+        const addedPost: PostRow = data[0];
         const formattedPost: Post = {
           id: addedPost.id,
           author: addedPost.author,
           title: addedPost.title,
           content: addedPost.content,
           time: "الآن",
-          twitter: addedPost.twitter,
+          twitter: addedPost.twitter || "",
           tab: addedPost.tab,
           likes: addedPost.likes,
           isLiked: false,
           timestamp: new Date(addedPost.created_at),
-          pathway: addedPost.pathway,
-          links: addedPost.links,
+          pathway: addedPost.pathway || undefined,
+          links: addedPost.links || [],
         };
 
         setPosts([formattedPost, ...posts]);
         setShowSuccess(true);
+        setModalOpen(false);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -827,9 +845,10 @@ export default function Blog() {
 
       const newLikes = post.isLiked ? post.likes - 1 : post.likes + 1;
 
+      // استخدام type assertion لتجنب أخطاء TypeScript
       const { error } = await supabase
         .from("posts")
-        .update({ likes: newLikes })
+        .update({ likes: newLikes } as never)
         .eq("id", postId);
 
       if (error) {
